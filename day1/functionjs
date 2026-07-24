@@ -1,8 +1,0 @@
-let name = "abc";
-console.log(greet);
-function greet(name) {
-    let section = "aiml";
-    console.log('hello, $(a)');
-    console.log(section);
-}
-console.log(greet());
