@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1><i class="fa-solid fa-user-graduate"></i> Student Management System</h1>
+
+            <div class="right">
+                <span id="clock"></span>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <div class="main">
+
+            <!-- Left Side -->
+            <div class="card form-card">
+
+                <h2>Add Student</h2>
+
+                <form id="studentForm">
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" placeholder="Student Name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-users"></i>
+                        <input type="text" id="section" placeholder="Section" required>
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+
+                    <button id="submitBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Student
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="card">
+
+                <div class="top">
+
+                    <div class="count-card">
+                        <h3>Total Students</h3>
+                        <h1 id="count">0</h1>
+                    </div>
+
+                    <input type="text" id="search" placeholder="🔍 Search Student">
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Section</th>
+                            <th>Email</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tbody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <footer>
+
+            Made with ❤️ using HTML • CSS • JavaScript
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
