@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+
+        .slider-card {
+            background: #1e293b;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .slider-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: capitalize;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background: #334155;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .dots-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #475569;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .dot.active {
+            background: #38bdf8;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider-card">
+        <h1 class="slider-title">Image Slider</h1>
+        <div class="image-container">
+            <img id="slider-image" src="" alt="Slide Image" class="slider-image" />
+        </div>
+        <div class="dots-container" id="dots-container"></div>
+    </div>
+
+    <script>
+        const images = [
+            "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+            "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
+            "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&auto=format&fit=crop&q=80"
+        ];
+
+        let currentIndex = 0;
+        const imgElement = document.getElementById("slider-image");
+        const dotsContainer = document.getElementById("dots-container");
+
+        // Generate indicator dots
+        images.forEach((_, idx) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (idx === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => updateSlide(idx));
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateSlide(newIndex) {
+            currentIndex = newIndex;
+            imgElement.src = images[currentIndex];
+            imgElement.alt = `Image ${currentIndex + 1}`;
+
+            const dots = document.querySelectorAll(".dot");
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle("active", idx === currentIndex);
+            });
+        }
+
+        updateSlide(0);
+
+
+        setInterval(() => {
+            const nextIndex = (currentIndex + 1) % images.length;
+            updateSlide(nextIndex);
+        }, 1000.8);
+    </script>
+
+</body>
+
+</html>

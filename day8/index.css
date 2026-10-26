@@ -1,0 +1,5 @@
+.prod-Container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+}

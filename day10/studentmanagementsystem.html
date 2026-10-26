@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Management System</title>
+	<link rel="stylesheet" href="studentmanagementsystem.css">
+</head>
+
+<body>
+	<main class="container">
+		<h1>Student Management System</h1>
+
+		<section class="form-section">
+			<h2>Add Student</h2>
+			<form id="studentForm">
+				<div class="form-row">
+					<label for="studentName">Student Name</label>
+					<input id="studentName" type="text" required>
+
+					<label for="rollNumber">Roll No.</label>
+					<input id="rollNumber" type="text" required>
+				</div>
+				''
+				<div class="form-row">
+					<label for="course">Course</label>
+					<select id="course" required>
+						<option value="">Select course</option>
+						<option>HTML and CSS</option>
+						<option>JavaScript</option>
+						<option>Python</option>
+						<option>Artificial Intelligence</option>
+					</select>
+
+					<label for="marks">Marks</label>
+					<input id="marks" type="number" min="0" max="100" required>
+				</div>
+
+				<button type="submit">Add Student</button>
+				<p id="message" class="message"></p>
+			</form>
+		</section>
+
+		<section class="search-section">
+			<label for="search">Search by Student Name or Roll No.</label>
+			<input id="search" type="search" placeholder="Search...">
+		</section>
+
+		<section class="summary">
+			<p>Total Students: <strong id="totalStudents">0</strong></p>
+			<p>Average Marks: <strong id="averageMarks">0</strong></p>
+		</section>
+
+		<section>
+			<h2>Student Records</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Student Name</th>
+						<th>Roll No.</th>
+						<th>Course</th>
+						<th>Marks</th>
+						<th>Grade</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody id="studentTable"></tbody>
+			</table>
+			<p id="noRecords" class="no-records">No student records found.</p>
+		</section>
+	</main>
+
+	<script src="studentmanagementsystem.js"></script>
+</body>
+
+</html>

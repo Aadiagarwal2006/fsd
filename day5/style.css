@@ -1,0 +1,36 @@
+#products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: dodgerblue;
+    padding: 20px;
+}
+
+#products-container div {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+}
+
+#products-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#cart-container {
+    padding: 20px;
+    background-color: #eee;
+}
+
+#cart-container div {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
